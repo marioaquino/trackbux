@@ -1,0 +1,6 @@
+--- 
+:test: rspec
+:orm: datamapper
+:mock: mocha
+:renderer: erb
+:script: jquery
