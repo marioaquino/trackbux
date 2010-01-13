@@ -105,7 +105,7 @@ body {
     margin-top: 0px;
     font-size: 14px;
     height: 33px;
-    text-shadow: rgba(0, 0, 0, 0.410156) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.394531) 0px -1px 0px;
     width: 157px;
     top: 280px;
     right: 81px;
@@ -128,7 +128,7 @@ body {
     bottom: auto;
     margin-top: 0px;
     width: 49px;
-    text-shadow: rgba(0, 0, 0, 0.3125) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.296875) 0px -1px 0px;
     font-size: 13px;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -166,7 +166,7 @@ body {
     font-size: 15pt;
     font-weight: bold;
     letter-spacing: 1px;
-    text-shadow: rgba(0, 0, 0, 0.511719) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
     left: 16px;
     top: 24px;
     right: 16px;
@@ -181,7 +181,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.511719) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -252,16 +252,6 @@ body {
     bottom: auto;
 }
 
-#expenseField {
-    position: absolute;
-    width: 70px;
-    color: black;
-    font-family: HelveticaNeue;
-    font-size: 10pt;
-    left: 52px;
-    top: 287px;
-}
-
 #spentLabel {
     font-family: Helvetica;
     text-overflow: ellipsis;
@@ -330,7 +320,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.511719) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 30px;
@@ -382,7 +372,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.527344) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.511719) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 30px;
@@ -433,5 +423,15 @@ body {
     font-size: 15pt;
     letter-spacing: 1px;
     font-weight: bold;
-    text-shadow: rgba(0, 0, 0, 0.402344) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.386719) 0px -1px 0px;
+}
+
+#expenseField {
+    position: absolute;
+    width: 70px;
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    left: 52px;
+    top: 287px;
 }

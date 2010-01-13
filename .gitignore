@@ -1,4 +1,10 @@
 .DS_Store
+*.swp
+*.log
+*.db
+*.gem
+bin/
+tags
 log/**/*
 tmp/**/*
 vendor/

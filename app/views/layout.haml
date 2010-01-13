@@ -1,0 +1,9 @@
+%html
+  %head
+    %title Budget Minder
+  %body
+    - [:notice].each do |key| 
+      - unless flash[key].blank? 
+        %p{ :class => "flash flash_#{key}" }= flash[key]
+    #container
+      = yield
