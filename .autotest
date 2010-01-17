@@ -1,0 +1,9 @@
+require 'autotest/growl'
+
+Autotest::Growl::image_dir = File.join(ENV['HOME'], '.autotest_images')
+
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .svn .hg .DS_Store db log rerun.txt tmp vendor ._* .sqlite3}.each do |exception| 
+    autotest.add_exception(exception) 
+  end
+end

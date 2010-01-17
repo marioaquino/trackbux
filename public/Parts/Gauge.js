@@ -62,7 +62,7 @@ Gauge.prototype.preLoadAnImage = function(imagePath, propertyKey)
 	this[propertyKey] = imageObject;
 }
 
-Gauge.prototype.preLoadImages = function()
+Gauge.prototype.preLoadimages = function()
 {
 	this._imagesToPreLoad = 5;
 	
@@ -208,11 +208,11 @@ Gauge.prototype._init = function(value, minValue, maxValue, onValue, warningValu
 	
 	var style = null;
     
-	this._imageOnPath = imageOn == null ? "Images/GaugeOn.png" : imageOn;
-	this._imageOffPath = imageOff == null ? "Images/GaugeOff.png" : imageOff;
-	this._imageWarningPath = imageWarning == null ? "Images/GaugeWarning.png" : imageWarning;
-	this._imageCriticalPath = imageCritical == null ? "Images/GaugeCritical.png" : imageCritical;
-	this._imagePointerPath = imagePointer == null ? "Images/GaugePointer.png" : imagePointer;
+	this._imageOnPath = imageOn == null ? "images/GaugeOn.png" : imageOn;
+	this._imageOffPath = imageOff == null ? "images/GaugeOff.png" : imageOff;
+	this._imageWarningPath = imageWarning == null ? "images/GaugeWarning.png" : imageWarning;
+	this._imageCriticalPath = imageCritical == null ? "images/GaugeCritical.png" : imageCritical;
+	this._imagePointerPath = imagePointer == null ? "images/GaugePointer.png" : imagePointer;
     
 	// Add event listeners
 	if (this.interactive)
@@ -222,7 +222,7 @@ Gauge.prototype._init = function(value, minValue, maxValue, onValue, warningValu
 	}
     
 	this._onPreLoadComplete = function () { _self.refresh(); };
-	this.preLoadImages();
+	this.preLoadimages();
 }
 
 Gauge.prototype._setValueTo = function(newValue)

@@ -82,7 +82,7 @@ body {
     border-right-width: 11px;
     border-bottom-width: 0px;
     border-left-width: 11px;
-    -webkit-border-image: url(Images/background.png) 0 11 0 11 stretch stretch;
+    -webkit-border-image: url(images/background.png) 0 11 0 11 stretch stretch;
     width: auto;
     right: 11px;
     left: 11px;
@@ -152,7 +152,7 @@ body {
     border-right-width: 1px;
     border-bottom-width: 0px;
     border-left-width: 1px;
-    -webkit-border-image: url(Images/header.png) 0 1 0 1 stretch stretch;
+    -webkit-border-image: url(images/header.png) 0 1 0 1 stretch stretch;
 }
 
 #title {

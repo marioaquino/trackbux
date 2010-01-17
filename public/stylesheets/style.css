@@ -1,0 +1,14 @@
+.flash {
+	padding: 10px;
+	background-color: red;
+	margin: 1em 0;
+}
+
+#error {
+    border-color: red;
+	background-color: #FFA7A5;
+}
+#notice {
+    border-color: green;
+	background-color: #C1FFAB;
+}

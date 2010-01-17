@@ -1,6 +1,8 @@
-Feature: view pages
+Feature: View budget tracker
 
-	# Scenario: Home page
-	# Given I am viewing "/"
-	# Then I should see "Budget Minder"
+	Scenario: Unauthenticated user views homepage
+	Given I visit "/"
+	And I am not authenticated
+	Then I should see "Please login using one of these login credentials"
+	
 	

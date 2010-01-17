@@ -1,2 +1,9 @@
-default: --format profile features
+<% 
+rerun = File.file?('rerun.txt') ? IO.read('rerun.txt') : ""
+rerun_opts = rerun.to_s.strip.empty? ? "--format progress features" : "--format pretty #{rerun}"
+std_opts = "#{rerun_opts} --format rerun --out rerun.txt --strict --tags ~@wip"
+%>
+default: <%= std_opts %>
+wip: --tags @wip:3 --wip features
 html_report: --format progress --format html --out=features_report.html features
+none: --format pretty

@@ -1,10 +1,16 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
 
 describe User do
-  # This spec is added because the warden_plugin registers a session deserialize
-  # callback that expects the user_class to have a find method
-  # This spec depends on the User fixture to setup at least 1 user
-  it "should have a find method that behaves the same as the first method" do
-    User.find(1).should == User.first(:id => 1)
+  before(:each) do
+    @user = User.new
+  end
+  
+  it "should have a time zone that defaults to UTC" do
+    @user.time_zone.should == "UTC"
+  end
+  
+  it "should allow only valid time zones" do
+    @user.time_zone = 'foo'
+    @user.valid?.should be_false
   end
 end

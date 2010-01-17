@@ -1,6 +1,7 @@
 # This file is merely for beginning the boot process, check dependencies.rb for more information
 require 'rubygems'
 require 'sinatra/base'
+require 'active_support'
 
 RACK_ENV = ENV["RACK_ENV"] ||= "development" unless defined? RACK_ENV
 ROOT_DIR = File.dirname(__FILE__) + '/../' unless defined? ROOT_DIR
@@ -16,6 +17,24 @@ end
 def public_path(*args)
   root_path('public', *args)
 end
+
+# Only place where app name is allowed so it can be changed easily
+def app_name
+  'budget-minder'
+end
+
+def rpxnow_api_key
+  ENV['BUDGETMINDER_RPXNOW_API_KEY']
+end
+
+# This is needed by the openid authentication token
+def site_url
+  return 'localhost:9393' unless RACK_ENV == 'production'
+  "#{app_name}.heroku.com"
+end
+
+# Default timezone for all Budget periods
+Time.zone_default = Time.__send__(:get_zone, "UTC")
 
 class BudgetMinder < Sinatra::Application
   # Defines basic application settings

@@ -1,0 +1,25 @@
+<h2>Please login using one of these login credentials</h2>
+<br/>
+<table width='763px'>
+	<tr>
+		<td width='33%'>
+			<form method="POST" action="<%= authentication_url %>">
+				<input type="hidden" name="openid_identifier" value="yahoo.com" />
+				<input type="image" src='/images/yahoo.png' />
+			</form>
+		</td>
+
+		<td width='33%'>
+			<form method="POST" action="<%= authentication_url %>">
+				<input type="hidden" name="openid_identifier" value="https://www.google.com/accounts/o8/id" />
+				<input type="image" src='/images/google.png' />
+			</form>
+		</td>
+
+		<td width='33%'>
+			<form method="POST" action="<%= authentication_url %>">
+				<input type="image" src='/images/live.png' />
+			</form>
+		</td>
+	</tr>
+</table>

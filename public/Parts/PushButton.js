@@ -63,7 +63,7 @@ function PushButton(buttonElement, spec)
 
     // determine URL of background images
     this._pressed = false;
-	var imagePrefix = "Images/" + styleElement.id;
+	var imagePrefix = "images/" + styleElement.id;
 	this._bgIimageURL = imagePrefix + ".png"
 	this._pressedBgImageURL = imagePrefix + "_clicked.png";
 	

@@ -5,6 +5,7 @@
 *.gem
 bin/
 tags
+rerun.txt
 log/**/*
 tmp/**/*
 vendor/

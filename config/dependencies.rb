@@ -24,20 +24,6 @@ class BudgetMinder < Sinatra::Application
   # Require all the folders and files necessary to run the application
   file_loading_paths.each { |load_path| Dir[root_path(load_path)].each { |file| require file } }
  
-  # Require Warden plugin below to allow User to be loaded
-  register SinatraMore::WardenPlugin
-
-  use Warden::Manager do |manager|
-    manager.serializers.update(:session) do
-      def serialize(user)
-        user.id
-      end
-      def deserialize(key)
-        User.first(:id => key)
-      end
-    end
-  end
-  
   # Exposes 'partial' method
   register SinatraMore::RenderPlugin
   
