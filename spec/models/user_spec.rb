@@ -21,4 +21,12 @@ describe User do
         @user.time_zone.should == v
       end
   end
+  
+  it "should have a latest budget" do
+    budgets = [3.weeks.ago, 1.week.from_now, 1.week.ago].map {|period| 
+      Budget.new(:user => @user, :period => period)}
+    @user.budgets = budgets
+    @user.save
+    User.first.latest_budget.should == budgets[1]
+  end
 end

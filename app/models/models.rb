@@ -9,9 +9,29 @@ class User
     ActiveSupport::TimeZone.all.find{|zone| zone.name == @time_zone}
   end
 
-  has 1, :budget
+  has n, :budgets, :order => [ :period.asc ]
   
   def time_zone=(value)
     attribute_set(:time_zone, value.split(/\)\s/).last)
   end
+  
+  def latest_budget
+    budgets.last
+  end
 end
+
+class Budget
+  include DataMapper::Resource
+  
+  property :id, Serial
+  property :period, Time, :default => lambda { 1.week.from_now.at_midnight }
+  
+  belongs_to :user
+  
+  def period
+    attribute_get(:period).in_time_zone(user.time_zone)
+  end
+end
+
+Budget.auto_upgrade!
+User.auto_upgrade!
