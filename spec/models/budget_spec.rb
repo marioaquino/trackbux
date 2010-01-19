@@ -23,5 +23,14 @@ describe Budget do
     @user.time_zone = 'Vilnius'
     @budget.period.utc_offset.should == ActiveSupport::TimeZone['Vilnius'].utc_offset
   end
+
+  it "should initially have value of 0.0 expenses" do
+    @budget.total_expenses.should == 0.0
+  end
   
+  it "should accept new expenses and update the total" do
+    @budget.save # saved as first step to simulate budget being "clean"
+    [1.0, 2.0, 3.0].each{|amount| @budget.add_expense(amount)}
+    @budget.total_expenses.should == 6.0
+  end
 end

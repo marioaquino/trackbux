@@ -10,6 +10,7 @@ gem 'rack-flash'
 # Component requirements
 gem 'dm-core'
 gem 'dm-validations'
+gem 'dm-aggregates'
 
 # Testing requirements
 gem 'rr', :only => :testing
