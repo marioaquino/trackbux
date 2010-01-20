@@ -1,10 +1,14 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
+require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
 
 describe Budget do
-  before do
+  before(:each) do
     @user = User.new
     @budget = Budget.new
     @budget.user = @user
+  end
+  
+  after(:each) do
+    Budget.all.map(&:destroy)
   end
   
   it "should have a period that is 1 week long by default" do

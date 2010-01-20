@@ -1,8 +1,12 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
+require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
 
 describe User do
   before(:each) do
     @user = User.new
+  end
+  
+  after(:each) do
+    User.all.map(&:destroy)
   end
   
   it "should have a time zone that defaults to UTC" do

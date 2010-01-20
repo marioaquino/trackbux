@@ -24,6 +24,8 @@ class BudgetMinder < Sinatra::Application
   # Require all the folders and files necessary to run the application
   file_loading_paths.each { |load_path| Dir[root_path(load_path)].each { |file| require file } }
  
+  ModelUpgrader.upgrade
+ 
   # Exposes 'partial' method
   register SinatraMore::RenderPlugin
   
