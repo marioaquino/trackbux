@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
 
 describe Budget do
   before(:each) do
-    @user = User.new
+    @user = User.new.tap {|u| u.save }
     @budget = Budget.new
     @budget.user = @user
   end
@@ -36,5 +36,14 @@ describe Budget do
     @budget.save # saved as first step to simulate budget being "clean"
     [1.0, 2.0, 3.0].each{|amount| @budget.add_expense(amount)}
     @budget.total_expenses.should == 6.0
+  end
+  
+  it "should have an amount for the period that is initially 0.0" do
+    @budget.amount.should == 0.0
+  end
+  
+  it "should take its initial value from the user" do
+    @user.default_budget_amount = 25.0
+    Budget.new(:user => @user).amount.should == @user.default_budget_amount
   end
 end

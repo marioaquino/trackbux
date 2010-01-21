@@ -3,6 +3,9 @@ class Budget
   
   property :id, Serial
   property :period, Time, :default => lambda { 1.week.from_now.at_midnight }
+  property :amount, BigDecimal, :precision => 8, :scale => 2, :default => lambda {|budget, property| 
+    budget.user.default_budget_amount
+  }
   
   has n, :expenses
   belongs_to :user

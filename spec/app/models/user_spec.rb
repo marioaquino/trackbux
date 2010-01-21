@@ -33,4 +33,8 @@ describe User do
     @user.save
     User.first.latest_budget.should == budgets[1]
   end
+  
+  it "should have a default budget amount that is zero by default" do
+    @user.default_budget_amount.should == 0.0
+  end
 end
