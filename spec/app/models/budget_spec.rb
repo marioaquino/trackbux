@@ -61,4 +61,8 @@ describe Budget do
       @budget.percent_remaining.should == 86.6
     end
   end
+  
+  it "should handle zero default budget when calculating remaining funds" do
+    @budget.percent_remaining.should == 0.0
+  end
 end

@@ -1,10 +1,10 @@
-Budget Period
-Current Expenses Total
-BudgetRemaining
-PercentUsed
-Cycle End Date
+* Budget Period
+* Current Expenses Total
+* BudgetRemaining
+* PercentUsed
+* Cycle End Date
 
-DateLogged	Expense	
+* DateLogged	Expense	
 
 Geo-locate newly added expenses (config option on device to automatically geolocate expense entries)
 
