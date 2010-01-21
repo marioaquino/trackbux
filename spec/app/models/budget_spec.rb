@@ -3,8 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
 describe Budget do
   before(:each) do
     @user = User.new.tap {|u| u.save }
-    @budget = Budget.new
-    @budget.user = @user
+    @budget = Budget.new(:user => @user)
   end
   
   after(:each) do
@@ -41,17 +40,25 @@ describe Budget do
   it "should have an amount for the period that is initially 0.0" do
     @budget.amount.should == 0.0
   end
+  context "based on a user default budget amount" do
+    before(:each) do
+      @user.default_budget_amount = 25.0
+    end
+
+    it "should take its initial value from the user" do
+      @budget.amount.should == @user.default_budget_amount
+    end
   
-  it "should take its initial value from the user" do
-    @user.default_budget_amount = 25.0
-    Budget.new(:user => @user).amount.should == @user.default_budget_amount
-  end
+    it "should calculate the budget remaining based on expenses" do
+      @budget.save # Required so that add_expense can save it's own transaction
+      @budget.add_expense 5.41
+      @budget.remaining_funds.should == 19.59
+    end
   
-  it "should calculate the budget remaining" do
-    @user.default_budget_amount = 25.0
-    budget = Budget.new(:user => @user)
-    budget.save # Required so that add_expense can save it's own transaction
-    budget.add_expense 5.41
-    budget.remaining_funds.should == 19.59
+    it "should calculate the percentage of remaining funds" do
+      @budget.save # Required so that add_expense can save it's own transaction
+      @budget.add_expense 3.35
+      @budget.percent_remaining.should == 86.6
+    end
   end
 end

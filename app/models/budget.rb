@@ -28,4 +28,8 @@ class Budget
   def remaining_funds
     amount - total_expenses
   end
+  
+  def percent_remaining
+    (remaining_funds / amount) * 100
+  end
 end
