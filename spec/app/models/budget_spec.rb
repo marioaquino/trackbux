@@ -46,4 +46,12 @@ describe Budget do
     @user.default_budget_amount = 25.0
     Budget.new(:user => @user).amount.should == @user.default_budget_amount
   end
+  
+  it "should calculate the budget remaining" do
+    @user.default_budget_amount = 25.0
+    budget = Budget.new(:user => @user)
+    budget.save # Required so that add_expense can save it's own transaction
+    budget.add_expense 5.41
+    budget.remaining_funds.should == 19.59
+  end
 end

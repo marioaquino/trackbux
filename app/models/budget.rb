@@ -24,4 +24,8 @@ class Budget
     expenses.new(:amount => amount)
     expenses.save
   end
+  
+  def remaining_funds
+    amount - total_expenses
+  end
 end
