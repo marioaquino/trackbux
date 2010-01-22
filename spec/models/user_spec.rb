@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
+require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
 
 describe User do
   before(:each) do
@@ -26,15 +26,16 @@ describe User do
       end
   end
   
-  it "should have a latest budget" do
-    budgets = [3.weeks.ago, 1.week.from_now, 1.week.ago].map {|period| 
-      Budget.new(:user => @user, :period => period)}
-    @user.budgets = budgets
-    @user.save
-    User.first.latest_budget.should == budgets[1]
-  end
-  
   it "should have a default budget amount that is zero by default" do
     @user.default_budget_amount.should == 0.0
+  end
+  
+  it "should initially have 0 accounts" do
+    @user.accounts.size == 0
+  end
+  
+  it "should be able to add any number of accounts" do
+    @user.accounts << Account.new
+    @user.accounts.size.should == 1
   end
 end

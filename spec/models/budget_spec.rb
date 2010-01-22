@@ -1,13 +1,15 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
+require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
 
 describe Budget do
   before(:each) do
     @user = User.new.tap {|u| u.save }
-    @budget = Budget.new(:user => @user)
+    @account = Account.new.tap{|a| a.users << @user }
+    @budget = Budget.new(:account => @account)
   end
   
   after(:each) do
     Budget.all.map(&:destroy)
+    User.all.map(&:destroy)
   end
   
   it "should have a period that is 1 week long by default" do
@@ -18,8 +20,8 @@ describe Budget do
     @budget.period.zone.should == 'UTC'
   end
 
-  it "should belong to a user" do
-    @budget.user.should == @user
+  it "should belong to an account" do
+    @budget.account.should == @account
   end
   
   it "should represent the period in the user's time zone" do

@@ -1,4 +1,5 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_config.rb')
+require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
+
 
 describe Expense do
   it "should have a created_on date that defaults to now" do

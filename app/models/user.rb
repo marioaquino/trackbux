@@ -10,13 +10,10 @@ class User
     ActiveSupport::TimeZone.all.find{|zone| zone.name == @time_zone}
   end
 
-  has n, :budgets, :order => [ :period.asc ]
+  has n, :accounts, :through => Resource
   
   def time_zone=(value)
     attribute_set(:time_zone, value.split(/\)\s/).last)
   end
   
-  def latest_budget
-    budgets.last
-  end
 end

@@ -4,14 +4,14 @@ class Budget
   property :id, Serial
   property :period, Time, :default => lambda { 1.week.from_now.at_midnight }
   property :amount, BigDecimal, :precision => 8, :scale => 2, :default => lambda {|budget, property| 
-    budget.user.default_budget_amount
+    budget.account.default_budget_amount
   }
   
+  belongs_to :account
   has n, :expenses
-  belongs_to :user
   
   def period
-    attribute_get(:period).in_time_zone(user.time_zone)
+    attribute_get(:period).in_time_zone(account.time_zone)
   end
   
   # TODO: Optimize to not calculate on every read. Cache total expenses
