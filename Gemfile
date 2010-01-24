@@ -11,13 +11,14 @@ gem 'rack-flash'
 gem 'dm-core'
 gem 'dm-validations'
 gem 'dm-aggregates'
+gem 'dm-is-list'
 
 # Testing requirements
-gem 'rr', :only => :testing
-# gem 'rspec', :only => :testing
+# gem 'rr', :only => :testing
+gem 'rspec', :only => :testing
 gem 'rack-test', :require_as => 'rack/test', :only => :testing
-# gem 'cucumber', :only => :testing
-# gem 'webrat', :only => :testing
+gem 'cucumber', :only => :testing
+gem 'webrat', :only => :testing
 gem 'data_objects', :only => [:development, :testing]
 gem 'do_sqlite3', :only => [:development, :testing] # for dev/testing only
-# gem 'ruby-debug', :only => [:development, :testing]
+gem 'ruby-debug', :only => [:development, :testing]

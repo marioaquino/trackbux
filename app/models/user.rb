@@ -16,4 +16,7 @@ class User
     attribute_set(:time_zone, value.split(/\)\s/).last)
   end
   
+  def default_account
+    accounts.first
+  end
 end

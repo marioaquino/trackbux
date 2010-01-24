@@ -34,8 +34,18 @@ describe User do
     @user.accounts.size == 0
   end
   
-  it "should be able to add any number of accounts" do
-    @user.accounts << Account.new
-    @user.accounts.size.should == 1
+  context "related to accounts " do
+    before(:each) do
+      @account = Account.new
+      @user.accounts << @account
+    end
+
+    it "should be able to add any number of accounts" do
+      @user.accounts.size.should == 1
+    end
+  
+    it "should treat the first account as the default account" do
+      @user.default_account.should == @account
+    end    
   end
 end
