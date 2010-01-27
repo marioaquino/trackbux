@@ -4,11 +4,7 @@ describe User do
   before(:each) do
     @user = User.new
   end
-  
-  after(:each) do
-    User.all.map(&:destroy)
-  end
-  
+    
   it "should have a time zone that defaults to UTC" do
     @user.time_zone.should == "UTC"
   end
@@ -34,10 +30,10 @@ describe User do
     @user.accounts.size == 0
   end
   
-  context "related to accounts " do
+  context "related to accounts" do
     before(:each) do
-      @account = Account.new
-      @user.accounts << @account
+      @account = Account.new(:name => 'Primary')
+      @user.add_account @account
     end
 
     it "should be able to add any number of accounts" do
@@ -47,5 +43,33 @@ describe User do
     it "should treat the first account as the default account" do
       @user.default_account.should == @account
     end    
+    
+    context "and default accounts" do
+      before(:each) do
+        @secondary = Account.new(:name => 'Secondary')    
+      end
+      
+      it "should add an account to the list of accounts as needed if you make it the default" do
+        @user.accounts.should_not include(@secondary)
+        @user.default_account = @secondary
+        @user.accounts.should include(@secondary)
+      end
+      
+      context "already added to the users account list" do
+        before(:each) do
+          @user.add_account @secondary
+        end
+
+        it "should not make additional accounts the default just by adding them" do
+          @user.default_account.should == @account
+        end
+
+        it "should allow any account to become the default" do
+          @user.default_account = @secondary
+          @user.default_account.should == @secondary
+          @user.accounts.size.should == 2
+        end
+      end
+    end
   end
 end

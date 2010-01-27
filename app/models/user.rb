@@ -10,13 +10,21 @@ class User
     ActiveSupport::TimeZone.all.find{|zone| zone.name == @time_zone}
   end
 
+  has 1, :default_account, "Account"
   has n, :accounts, :through => Resource
+  
+  after :default_account= do
+    default = default_account
+    add_account(default) unless accounts.include?(default)
+  end
   
   def time_zone=(value)
     attribute_set(:time_zone, value.split(/\)\s/).last)
   end
   
-  def default_account
-    accounts.first
+  def add_account(account)
+    self.accounts << account
+    account.users << self
+    self.default_account ||= account
   end
 end

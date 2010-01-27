@@ -12,7 +12,7 @@ describe Account do
   context "as related to users" do
     before(:each) do
       @user = User.new.tap {|u| u.save }
-      @account.users << @user
+      @user.add_account @account
     end
     
     it "should accept any number of users" do
@@ -26,11 +26,6 @@ describe Account do
       @account.budgets += budgets
       @account.save
       Account.first.latest_budget.should == budgets[1]
-    end
-
-    after(:each) do
-      Account.all.map(&:destroy)
-      User.all.map(&:destroy)
     end
   end
 end

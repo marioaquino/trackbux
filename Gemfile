@@ -11,7 +11,6 @@ gem 'rack-flash'
 gem 'dm-core'
 gem 'dm-validations'
 gem 'dm-aggregates'
-gem 'dm-is-list'
 
 # Testing requirements
 # gem 'rr', :only => :testing

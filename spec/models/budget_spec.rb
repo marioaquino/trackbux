@@ -3,15 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
 describe Budget do
   before(:each) do
     @user = User.new.tap {|u| u.save }
-    @account = Account.new.tap{|a| a.users << @user }
+    @account = Account.new.tap{|a| @user.add_account a }
     @budget = Budget.new(:account => @account)
   end
-  
-  after(:each) do
-    Budget.all.map(&:destroy)
-    User.all.map(&:destroy)
-  end
-  
+    
   it "should have a period that is 1 week long by default" do
     @budget.period.should == 1.week.from_now.at_midnight
   end

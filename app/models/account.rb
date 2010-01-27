@@ -2,6 +2,7 @@ class Account
   include DataMapper::Resource
   
   property :id, Serial
+  property :name, String, :default => 'Default' #FIXME: Localization
   
   has n, :budgets, :order => [ :period.asc ]
   
