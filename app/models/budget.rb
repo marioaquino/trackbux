@@ -14,6 +14,10 @@ class Budget
     attribute_get(:period).in_time_zone(account.time_zone)
   end
   
+  def days_until_end_of_period
+    (period.to_date - Date.today).to_i
+  end
+  
   # TODO: Optimize to not calculate on every read. Cache total expenses
   # and update on add
   def total_expenses

@@ -10,6 +10,13 @@ describe Budget do
   it "should have a period that is 1 week long by default" do
     @budget.period.should == 1.week.from_now.at_midnight
   end
+  
+  it "should calculate the number of days until the end of the period" do
+    @budget.days_until_end_of_period.should == 7
+    
+    @budget.period = 2.weeks.from_now + 2.days
+    @budget.days_until_end_of_period.should == 16
+  end
 
   it "should have a timezone-specific period defaulted to UTC" do
     @budget.period.zone.should == 'UTC'
