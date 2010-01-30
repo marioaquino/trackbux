@@ -33,8 +33,8 @@ class Budget
     amount - total_expenses
   end
   
-  def percent_remaining
+  def percent_used
     return 0.0 if amount == 0.0
-    (remaining_funds / amount) * 100
+    100 - ((remaining_funds / amount) * 100)
   end
 end

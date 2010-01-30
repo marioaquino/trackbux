@@ -59,14 +59,14 @@ describe Budget do
       @budget.remaining_funds.should == 19.59
     end
   
-    it "should calculate the percentage of remaining funds" do
+    it "should calculate the percentage of used funds" do
       @budget.save # Required so that add_expense can save it's own transaction
       @budget.add_expense 3.35
-      @budget.percent_remaining.should == 86.6
+      @budget.percent_used.should == 13.4
     end
   end
   
-  it "should handle zero default budget when calculating remaining funds" do
-    @budget.percent_remaining.should == 0.0
+  it "should handle zero default budget when calculating used funds" do
+    @budget.percent_used.should == 0.0
   end
 end
