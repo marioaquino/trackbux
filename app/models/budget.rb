@@ -15,7 +15,7 @@ class Budget
   end
   
   def days_until_end_of_period
-    (period.to_date - Date.today).to_i
+    (period.to_date - tz_adjusted_date).to_i
   end
   
   # TODO: Optimize to not calculate on every read. Cache total expenses
@@ -25,8 +25,7 @@ class Budget
   end
   
   def add_expense(amount)
-    expenses.new(:amount => amount)
-    expenses.save
+    expenses.create(:amount => amount)
   end
   
   def remaining_funds
@@ -36,5 +35,10 @@ class Budget
   def percent_used
     return 0.0 if amount == 0.0
     100 - ((remaining_funds / amount) * 100)
+  end
+  
+  private
+  def tz_adjusted_date
+    Time.now.in_time_zone(account.time_zone).to_date
   end
 end
