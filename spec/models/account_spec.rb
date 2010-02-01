@@ -27,5 +27,9 @@ describe Account do
       @account.save
       Account.first.latest_budget.should == budgets[1]
     end
+    
+    it "should have a currency that defaults to the user's preferred currency" do
+      @account.currency.should == @user.default_currency
+    end
   end
 end

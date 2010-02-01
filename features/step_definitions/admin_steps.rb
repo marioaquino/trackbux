@@ -2,9 +2,8 @@ When /^I am not authenticated$/ do
   # do nothing to mock authentication
 end
 
-Given /^I am logged in as "([^\"]*)"$/ do |user|
-  visit '/admin'
-  Given "I login with username \"#{user}\" and password \"#{user}\""
+Given /^I am authenticated as "([^\"]*)"$/ do |user|
+  @user = User.first(:username => user)
 end
 
 Given /^I click "([^\"]*)"$/ do |link|

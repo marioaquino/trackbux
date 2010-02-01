@@ -8,6 +8,8 @@ Webrat.configure do |config|
   config.mode = :rack
 end
 
+FakeWeb.allow_net_connect = false
+
 class MyWorld
   include Rack::Test::Methods
   include Webrat::Methods

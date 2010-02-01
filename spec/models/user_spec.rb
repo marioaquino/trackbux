@@ -2,11 +2,21 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_config.rb')
 
 describe User do
   before(:each) do
-    @user = User.new
+    @user = User.new(:username => 'Ismaelito')
   end
     
   it "should have a time zone that defaults to UTC" do
     @user.time_zone.should == "UTC"
+  end
+  
+  it "should have a currency which is 'USD' by default" do
+    @user.default_currency.should == "USD"
+    @user.valid?.should be_true
+  end
+  
+  it "should only allow currencies known by the system" do
+    @user.default_currency = 'foo'
+    @user.valid?.should be_false
   end
   
   it "should allow only valid time zones" do
