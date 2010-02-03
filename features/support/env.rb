@@ -2,6 +2,9 @@ RACK_ENV = 'test' unless defined?(RACK_ENV)
 require File.dirname(__FILE__) + "/../../config/boot"
 Bundler.require_env(:testing)
 require 'ruby-debug'
+
+DataMapper.auto_migrate!
+
 require File.dirname(__FILE__) + "/../../spec/spec_fixtures"
 
 Webrat.configure do |config|

@@ -37,6 +37,53 @@ function load()
     if (!database) {
         element.value = originalSettings.message;
     }
+
+	updateSummary();
+}
+
+function updateSummary() 
+{
+	$.getJSON(summaryUrl(), function(map) {
+		setGaugeValue('gauge', map.percentage_used);
+		setElementText('amountSpentVal', map.amount_spent);
+		setElementText('amountRemainingVal', map.amount_remaining);
+		setElementText('nextCycleVal', map.end_date);
+	});
+}
+
+function summaryUrl() {
+	//FIXME
+	return 'http://192.168.1.102:8080/summary/1.json';
+}
+
+//
+// Function: setGaugeValue(gaugeId, value)
+// Sets the value of one of the monitor gauges
+//
+// gaugeId: Gauge to set
+// value: Value to set gauge to
+//
+function setGaugeValue (gaugeId, value)
+{
+    var element = document.getElementById(gaugeId);
+    if (element != null && element.object != null && element.object.setValue != null) {
+        element.object.setValue(value);
+    }
+}
+
+//
+// Function: setElementText(elementName, elementValue)
+// Set the text contents of an HTML div
+//
+// elementName: Name of the element in the DOM
+// elementValue: Text to display in the element
+//
+function setElementText(elementName, elementValue)
+{
+    var element = document.getElementById(elementName);
+    if (element) {
+        element.innerText = elementValue;
+    }
 }
 
 //
