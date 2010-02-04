@@ -44,11 +44,15 @@ function load()
 function updateSummary() 
 {
 	$.getJSON(summaryUrl(), function(map) {
-		setGaugeValue('gauge', map.percentage_used);
-		setElementText('amountSpentVal', map.amount_spent);
-		setElementText('amountRemainingVal', map.amount_remaining);
-		setElementText('nextCycleVal', map.end_date);
+		updateData(map);
 	});
+}
+
+function updateData(map) {
+	setGaugeValue('gauge', map.percentage_used);
+	setElementText('amountSpentVal', map.amount_spent);
+	setElementText('amountRemainingVal', map.amount_remaining);
+	setElementText('nextCycleVal', map.end_date);
 }
 
 function summaryUrl() {
@@ -84,6 +88,14 @@ function setElementText(elementName, elementValue)
     if (element) {
         element.innerText = elementValue;
     }
+}
+
+function getTextValue(name) {
+	return document.getElementById(name).value;
+}
+
+function setTextField(name, value) {
+    document.getElementById(name).value = value;
 }
 
 //
@@ -338,5 +350,10 @@ function authenticate(event)
 
 function addExpense(event)
 {
-    // Insert Code Here
+	//FIXME
+	//Don't post if there is no value or an invalid value in the expense field
+    $.post("http://192.168.1.102:8080/expense/1", {amount: getTextValue('expenseField')}, function(data) { 
+		updateData(data);
+		setTextField('expenseField', "");
+	}, "json");
 }

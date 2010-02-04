@@ -11,4 +11,11 @@ class BudgetMinder < Sinatra::Application
       Summary.new(u.default_account.latest_budget).to_json
     end
   end
+  
+  post '/expense/:id' do
+    u = User.first(:id => params[:id])
+    budget = u.default_account.latest_budget
+    budget.add_expense(params[:amount])
+    Summary.new(budget).to_json
+  end
 end
