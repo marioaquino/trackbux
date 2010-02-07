@@ -18,6 +18,10 @@ class Budget
     attribute_get(:period).in_time_zone(account.time_zone)
   end
   
+  def days_until_end_of_period
+    (period.to_date - tz_adjusted_date).to_i
+  end
+  
   def add_expense(amount)
     expenses.create(:amount => amount)
   end

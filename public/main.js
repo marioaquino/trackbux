@@ -38,6 +38,8 @@ function load()
         element.value = originalSettings.message;
     }
 
+	document.getElementById('addExpenseBtn').object.setEnabled(false);
+
 	updateSummary();
 }
 
@@ -53,6 +55,7 @@ function updateData(map) {
 	setElementText('amountSpentVal', map.amount_spent);
 	setElementText('amountRemainingVal', map.amount_remaining);
 	setElementText('nextCycleVal', map.end_date);
+	setElementText('daysUntilVal', map.days_until_end);
 }
 
 function summaryUrl() {
@@ -355,5 +358,14 @@ function addExpense(event)
     $.post("http://192.168.1.102:8080/expense/1", {amount: getTextValue('expenseField')}, function(data) { 
 		updateData(data);
 		setTextField('expenseField', "");
+		expenseValueChange("foo"); //FIXME: Why doesn't this happen automatically?
 	}, "json");
+}
+
+function expenseValueChange(event)
+{
+    var addButton = document.getElementById('addExpenseBtn');
+    var expenseField = document.getElementById('expenseField');
+	var enabled = expenseField.value != "";
+    addButton.object.setEnabled(enabled);
 }

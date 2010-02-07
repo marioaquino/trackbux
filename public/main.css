@@ -35,6 +35,10 @@ body {
     margin-right: 0px;
     min-height: 356px;
     height: auto;
+    -webkit-border-top-left-radius: 12px 12px;
+    -webkit-border-top-right-radius: 12px 12px;
+    -webkit-border-bottom-left-radius: 12px 12px;
+    -webkit-border-bottom-right-radius: 12px 12px;
 }
 
 #settings {
@@ -71,24 +75,6 @@ body {
     text-align: center;
 }
 
-#background {
-    -webkit-margin-top-collapse: separate;
-    -webkit-margin-bottom-collapse: separate;
-    position: absolute;
-    bottom: auto;
-    margin-top: 0px;
-    height: 336px;
-    border-top-width: 0px;
-    border-right-width: 11px;
-    border-bottom-width: 0px;
-    border-left-width: 11px;
-    -webkit-border-image: url(images/background.png) 0 11 0 11 stretch stretch;
-    width: auto;
-    right: 11px;
-    left: 11px;
-    top: 10px;
-}
-
 #reset {
     font-family: Helvetica;
     font-weight: bold;
@@ -105,7 +91,7 @@ body {
     margin-top: 0px;
     font-size: 14px;
     height: 33px;
-    text-shadow: rgba(0, 0, 0, 0.394531) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.351562) 0px -1px 0px;
     width: 157px;
     top: 280px;
     right: 81px;
@@ -128,7 +114,7 @@ body {
     bottom: auto;
     margin-top: 0px;
     width: 49px;
-    text-shadow: rgba(0, 0, 0, 0.296875) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.253906) 0px -1px 0px;
     font-size: 13px;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -152,186 +138,26 @@ body {
     border-right-width: 1px;
     border-bottom-width: 0px;
     border-left-width: 1px;
-    -webkit-border-image: url(images/header.png) 0 1 0 1 stretch stretch;
-}
-
-#title {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    font-family: Helvetica;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 15pt;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
-    left: 16px;
-    top: 24px;
-    right: 16px;
-    width: auto;
-    bottom: 304px;
-    height: auto;
+    -webkit-border-image: url(Images/header.png) 0 1 0 1 stretch stretch;
 }
 
 #infoButton {
     font-family: Helvetica;
     font-weight: bold;
-    font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.453125) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
     position: absolute;
-    width: 40px;
-    height: 40px;
-    right: 10px;
+    font-size: 13px;
+    right: 7px;
     margin-left: auto;
-    bottom: 10px;
+    bottom: 8px;
     margin-top: auto;
-}
-
-#gauge {
-    position: absolute;
-    right: auto;
-    bottom: auto;
-    margin-top: 0px;
-    width: 150px;
-    height: 150px;
-    left: 63px;
-    top: 47px;
-}
-
-#nextCycleVal {
-    font-family: Helvetica;
-    font-size: 17px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    left: 158px;
-    color: rgb(255, 255, 255);
-    top: 249px;
-    right: 28px;
-    width: auto;
-    height: auto;
-}
-
-#amountRemainingVal {
-    font-family: Helvetica;
-    font-size: 17px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    left: 158px;
-    color: rgb(255, 255, 255);
-    right: 27px;
-    width: auto;
-    height: auto;
-    bottom: auto;
-    top: 225px;
-}
-
-#amountSpentVal {
-    font-family: Helvetica;
-    font-size: 17px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    left: 158px;
-    top: 200px;
-    color: rgb(255, 255, 255);
-    right: 27px;
-    width: auto;
-    height: auto;
-    bottom: auto;
-}
-
-#spentLabel {
-    font-family: Helvetica;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 13px;
-    left: 57px;
-    right: 131px;
-    width: auto;
-    height: auto;
-    bottom: 118px;
-    top: 203px;
-}
-
-#remainingLabel {
-    font-family: Helvetica;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 13px;
-    left: 30px;
-    right: 131px;
-    width: auto;
-    height: auto;
-    bottom: 91px;
-    top: 225px;
-}
-
-#cycleLabel {
-    font-family: Helvetica;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 13px;
-    left: 76px;
-    top: 251px;
-    right: 131px;
-    width: auto;
-    bottom: 69px;
-    height: auto;
-}
-
-#currencyLabel {
-    font-family: Helvetica;
-    font-size: 17px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    top: 289px;
-    left: 34px;
-    width: auto;
-    height: auto;
-    color: rgb(255, 255, 255);
-}
-
-#addExpenseBtn {
-    font-family: Helvetica;
-    font-weight: bold;
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    height: 30px;
-    -webkit-dashboard-region: dashboard-region(control rectangle);
-    position: absolute;
-    right: auto;
-    bottom: auto;
-    margin-top: 0px;
-    left: 151px;
-    top: 284px;
-    width: 96px;
+    height: 40px;
+    width: 40px;
 }
 
 #usernameLabel {
@@ -372,7 +198,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.511719) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.46875) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 30px;
@@ -423,15 +249,217 @@ body {
     font-size: 15pt;
     letter-spacing: 1px;
     font-weight: bold;
-    text-shadow: rgba(0, 0, 0, 0.386719) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.34375) 0px -1px 0px;
+}
+
+#background {
+    -webkit-margin-top-collapse: separate;
+    -webkit-margin-bottom-collapse: separate;
+    position: absolute;
+    border-top-width: 0px;
+    border-right-width: 11px;
+    border-bottom-width: 0px;
+    border-left-width: 11px;
+    height: 348px;
+    width: auto;
+    right: 4px;
+    top: 4px;
+    left: 4px;
+    -webkit-border-image: url(Images/background.png) 0 11 0 11 stretch stretch;
+}
+
+#gauge {
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    width: 150px;
+    height: 150px;
+    left: 70px;
+    top: 16px;
+}
+
+#spentLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 56px;
+    font-family: Helvetica;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    top: 181px;
+    right: 138px;
+    width: auto;
+    bottom: 140px;
+    height: auto;
+}
+
+#remainingLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: Helvetica;
+    font-size: 14px;
+    left: 26px;
+    color: rgb(153, 153, 153);
+    top: 205px;
+    right: 135px;
+    width: auto;
+    bottom: 120px;
+    height: auto;
+}
+
+#cycleLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 77px;
+    font-family: Helvetica;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    top: 229px;
+    right: 138px;
+    width: auto;
+    bottom: 99px;
+    height: auto;
+}
+
+#currencyLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: Helvetica;
+    left: 19px;
+    top: 297px;
+    right: 261px;
+    width: auto;
+    bottom: 30px;
+    height: auto;
 }
 
 #expenseField {
-    position: absolute;
-    width: 70px;
     color: black;
-    font-family: HelveticaNeue;
-    font-size: 10pt;
-    left: 52px;
-    top: 287px;
+    -webkit-margin-top-collapse: separate;
+    -webkit-margin-bottom-collapse: separate;
+    display: block;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 86px;
+    left: 37px;
+    font-size: 15pt;
+    top: 292px;
+    font-family: Helvetica;
+}
+
+#addExpenseBtn {
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.449219) 0px -1px 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-dashboard-region: dashboard-region(control rectangle);
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    width: 96px;
+    height: 40px;
+    top: 289px;
+    left: 160px;
+    font-family: Helvetica;
+    opacity: 1;
+}
+
+#amountSpentVal {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 158px;
+    font-family: Helvetica;
+    color: rgb(204, 204, 204);
+    top: 181px;
+    right: 27px;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#amountRemainingVal {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 158px;
+    font-family: Helvetica;
+    color: rgb(204, 204, 204);
+    font-size: 14px;
+    font-weight: bold;
+    top: 206px;
+    right: 27px;
+    width: auto;
+    bottom: 126px;
+    height: auto;
+}
+
+#nextCycleVal {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 158px;
+    font-family: Helvetica;
+    color: rgb(204, 204, 204);
+    top: 229px;
+    right: 28px;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#roundedRectangleShape {
+    position: absolute;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    left: 17px;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    width: 243px;
+    opacity: 0.3;
+    height: 108px;
+    top: 169px;
+    -webkit-border-image: url(Images/roundedRectangleShape.png) 0 7 0 7 stretch stretch;
+}
+
+#daysUntilVal {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: Helvetica;
+    color: rgb(204, 204, 204);
+    right: 18px;
+    width: 104px;
+    min-height: 18px;
+    left: 160px;
+    top: 251px;
+    bottom: 77px;
+    height: auto;
+    font-size: 14px;
+    font-weight: bold;
 }
