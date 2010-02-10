@@ -4,6 +4,7 @@
 *.log
 *.db
 *.gem
+*.wdgtuser
 bin/
 tags
 rerun.txt
