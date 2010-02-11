@@ -4,7 +4,7 @@ clear_sources
 source 'http://gemcutter.org'
 # Base requirements
 gem 'sinatra'
-gem 'sinatra_more'
+gem 'sinatra_more', '0.3.37'
 gem 'rack-flash'
 gem 'money'
 
@@ -20,6 +20,7 @@ gem 'cucumber', :only => :testing
 gem 'webrat', :only => :testing
 gem 'fakeweb', :only => :testing 
 gem 'dm-sweatshop', :only => :testing
+gem 'ParseTree', :only => :testing
 gem 'data_objects', :only => [:development, :testing]
 gem 'do_sqlite3', :only => [:development, :testing]
 gem 'ruby-debug', :only => [:development, :testing]

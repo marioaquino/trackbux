@@ -50,7 +50,7 @@ class BudgetMinder < Sinatra::Application
     require File.expand_path(File.join(File.dirname(__FILE__), '/../vendor', 'gems', 'environment'))
     Bundler.require_env(environment)
   rescue LoadError => e
-    puts "Bundler must be run to resolve dependencies!"
+    puts "Bundler must be run to resolve dependencies! #{e}"
     system("cd #{ROOT_DIR}; gem bundle")
     puts "Retrying with dependencies resolved..."
     retry
