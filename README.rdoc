@@ -10,5 +10,5 @@ Once you have the repo checked out, you can initialize your project workspace by
 
 You can run all Cucumber tests with the 'cucumber' command from the root of the server app, or all of the specs with the 'spec spec/' command.  Or, as an alternative, you can just run all specs & feature tests all the time by running autospec.
 
-I recommend setting up Growl with autotest.  You can read how [here:](http://marioaquino.blogspot.com/2009/12/my-dot-autotest.html)
+I recommend setting up Growl with autotest.  You can read how here[http://marioaquino.blogspot.com/2009/12/my-dot-autotest.html].
 
