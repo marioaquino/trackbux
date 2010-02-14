@@ -324,3 +324,34 @@ function expenseButtonEnablement(buttonName, inputFieldName)
     var expenseField = document.getElementById(inputFieldName);
     addButton.object.setEnabled(expenseField.value != "");
 }
+
+// This object implements the dataSource methods for the list.
+var settingsListController = {
+	
+	// The List calls this method to find out how many rows should be in the list.
+	numberOfRows: function() {
+		return prefs.length;
+	},
+	
+	// The List calls this method once for every row.
+	prepareRow: function(rowElement, rowIndex, templateElements) {
+		// templateElements contains references to all elements that have an id in the template row.
+		// Ex: set the value of an element with id="label".
+		if (templateElements.label) {
+			templateElements.label.innerText = prefs[rowIndex].name;
+		}
+
+		// Assign a click event handler for the row.
+		rowElement.onclick = function(event) {
+			var browser = document.getElementById('browser').object;
+            // The Browser's goForward method is used to make the browser push down to a new level.  Going back to previous levels is handled automatically.
+            browser.goForward(document.getElementById(prefs[rowIndex].view), prefs[rowIndex].name);
+		};
+	}
+};
+
+var prefs = [
+    { name: "Budget", view: "budgetPrefs" },
+    { name: "Sharing", view: "sharingPrefs" },
+    { name: "About Trackbux", view: "aboutTrackbux" }
+];

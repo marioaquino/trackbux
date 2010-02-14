@@ -1,87 +1,21 @@
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>jQTouch &beta;</title>
-        <style type="text/css" media="screen">@import "jqtouch.min.css";</style>
-        <style type="text/css" media="screen">@import "themes/jqt/theme.min.css";</style>
-        <script src="javascripts/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="javascripts/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
-        <script type="text/javascript" charset="utf-8">
-            var jQT = new $.jQTouch({
-                icon: 'jqtouch.png',
-                addGlossToIcon: false,
-                startupScreen: 'jqt_startup.png',
-                statusBar: 'black',
-                preloadImages: [
-                    'themes/jqt/img/back_button.png',
-                    'themes/jqt/img/back_button_clicked.png',
-                    'themes/jqt/img/button_clicked.png',
-                    'themes/jqt/img/grayButton.png',
-                    'themes/jqt/img/whiteButton.png',
-                    'themes/jqt/img/loading.gif'
-                    ]
-            });
-            // Some sample Javascript functions:
-            $(function(){
-                // Show a swipe event on swipe test
-                $('#swipeme').swipe(function(evt, data) {                
-                    $(this).html('You swiped <strong>' + data.direction + '</strong>!');
-                });
-                $('a[target="_blank"]').click(function() {
-                    if (confirm('This link opens in a new window.')) {
-                        return true;
-                    } else {
-                        $(this).removeClass('active');
-                        return false;
-                    }
-                });
-                // Page animation callback events
-                $('#pageevents').
-                    bind('pageAnimationStart', function(e, info){ 
-                        $(this).find('.info').append('Started animating ' + info.direction + '&hellip; ');
-                    }).
-                    bind('pageAnimationEnd', function(e, info){
-                        $(this).find('.info').append(' finished animating ' + info.direction + '.<br /><br />');
-                    });
-                // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
-                $('#callback').bind('pageAnimationEnd', function(e, info){
-                    if (!$(this).data('loaded')) {                      // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
-                        $(this).append($('<div>Loading</div>').         // Append a placeholder in case the remote HTML takes its sweet time making it back
-                            load('ajax.html .info', function() {        // Overwrite the "Loading" placeholder text with the remote HTML
-                                $(this).parent().data('loaded', true);  // Set the 'loaded' var to true so we know not to re-load the HTML next time the #callback div animation ends
-                            }));
-                    }
-                });
-                // Orientation callback event
-                $('body').bind('turn', function(e, data){
-                    $('#orient').html('Orientation: ' + data.orientation);
-                });
-            });
-        </script>
-        <style type="text/css" media="screen">
-            body.fullscreen #home .info {
-                display: none;
-            }
-            #about {
-                padding: 100px 10px 40px;
-                text-shadow: rgba(255, 255, 255, 0.3) 0px -1px 0;
-                font-size: 13px;
-                text-align: center;
-                background: #161618;
-            }
-            #about p {
-                margin-bottom: 8px;
-            }
-            #about a {
-                color: #fff;
-                font-weight: bold;
-                text-decoration: none;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="about" class="selectable">
+<head>
+    <title>exp2</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.6">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="Images/WebClipIcon.png">
+    
+    <style type="text/css" media="screen">@import "jqtouch.min.css";</style>
+    <style type="text/css" media="screen">@import "themes/theme.min.css";</style>
+    <script src="javascripts/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+</head>
+<body onload="load();">
+    <div id="about" class="selectable">
                 <p><img src="jqtouch.png" /></p>
                 <p><strong>jQTouch</strong><br />Version 1.0 beta<br />
                     <a href="http://www.davidkaneda.com">By David Kaneda</a></p>
@@ -317,5 +251,5 @@
             </ul>
             <a style="margin:0 10px;color:rgba(0,0,0,.9)" href="#" class="submit whiteButton">Submit</a>
         </form>
-    </body>
+</body>
 </html>

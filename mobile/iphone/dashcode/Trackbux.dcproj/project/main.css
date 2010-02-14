@@ -27,27 +27,6 @@ body {
     min-height: 208px;
 }
 
-#footer {
-    font-size: 10pt;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-margin-top-collapse: separate;
-    -webkit-margin-bottom-collapse: separate;
-    width: 156px;
-    font-family: Helvetica;
-    text-shadow: rgb(0, 0, 0) 0px 0px 0px;
-    color: rgb(130, 130, 130);
-    position: absolute;
-    margin-top: 0px;
-    top: 328px;
-    left: 82px;
-    margin-right: auto;
-    height: auto;
-    right: 82px;
-    margin-left: auto;
-    text-align: center;
-}
-
 #done {
     font-family: Helvetica;
     text-align: center;
@@ -62,7 +41,7 @@ body {
     bottom: auto;
     margin-top: 0px;
     width: 49px;
-    text-shadow: rgba(0, 0, 0, 0.214844) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.128906) 0px -1px 0px;
     font-size: 13px;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -71,30 +50,12 @@ body {
     margin-left: auto;
 }
 
-#header {
-    margin-top: 0px;
-    -webkit-margin-top-collapse: separate;
-    -webkit-margin-bottom-collapse: separate;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    bottom: auto;
-    height: 45px;
-    right: 0px;
-    width: auto;
-    border-top-width: 0px;
-    border-right-width: 1px;
-    border-bottom-width: 0px;
-    border-left-width: 1px;
-    -webkit-border-image: url(Images/header.png) 0 1 0 1 stretch stretch;
-}
-
 #infoButton {
     font-family: Helvetica;
     font-weight: bold;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.414062) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.328125) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -114,7 +75,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.429688) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.34375) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 30px;
@@ -146,26 +107,6 @@ body {
     width: 114px;
     left: 7px;
     top: 118px;
-}
-
-#settingsTitle {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    font-family: Helvetica;
-    color: rgb(255, 255, 255);
-    top: 11px;
-    left: 86px;
-    right: 87px;
-    width: auto;
-    bottom: 8px;
-    height: auto;
-    text-align: center;
-    font-size: 15pt;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-shadow: rgba(0, 0, 0, 0.304688) 0px -1px 0px;
 }
 
 #background {
@@ -283,7 +224,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.410156) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.324219) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -584,7 +525,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.402344) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.316406) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -619,42 +560,148 @@ body {
     left: 200px;
 }
 
-#settings {
-    display: none;
+#browser {
     position: relative;
-    margin-top: 0px;
     margin-left: 0px;
     -webkit-margin-top-collapse: separate;
     -webkit-margin-bottom-collapse: separate;
-    width: auto;
     margin-right: 0px;
+    width: auto;
     min-height: 356px;
     height: auto;
 }
 
-#stackLayout {
+.button_template {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.535156) 0px -1px 0px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 30px;
+    -webkit-dashboard-region: dashboard-region(control rectangle);
+    width: 70px;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    top: 7px;
+    left: 5px;
+}
+
+#optionsList {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 312px;
+}
+
+#budgetPrefs {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 312px;
+}
+
+#sharingPrefs {
+    width: 100%;
+    min-height: 312px;
+    display: none;
+    position: relative;
+}
+
+#aboutTrackbux {
+    width: 100%;
+    min-height: 312px;
+    display: none;
+    position: relative;
+}
+
+#settings {
+    width: 100%;
+    min-height: 356px;
+    display: none;
+    position: relative;
+}
+
+.label_template {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    height: 22px;
+    right: 30px;
+    width: auto;
+    color: black;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#header {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    height: 44px;
+    width: auto;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.53125) 0px -1px 0px;
+    font-size: 16pt;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    -webkit-border-image: url(Images/header.png) 0 1 0 1 stretch stretch;
+}
+
+#settingsLayout {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: auto;
     overflow: hidden;
     z-index: 0;
+}
+
+#options {
+    background-color: white;
+    overflow: hidden;
+    display: none;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    width: auto;
+    -webkit-margin-top-collapse: separate;
+    -webkit-margin-bottom-collapse: separate;
+}
+
+.listRowTemplate_template {
+    position: relative;
+    list-style-type: none;
+    height: 47px;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-color: rgb(224, 224, 224);
+}
+
+.arrow_template {
     position: absolute;
-    margin-top: 0px;
-    right: 0px;
-    bottom: 256px;
-    top: 45px;
-    left: 0px;
-    width: 320px;
-    height: 278px;
-}
-
-#view1 {
-    width: 100%;
-    display: none;
-    position: relative;
-    min-height: 278px;
-}
-
-#view2 {
-    width: 100%;
-    display: none;
-    position: relative;
-    min-height: 278px;
+    width: 8px;
+    height: 13px;
+    right: 11px;
+    top: 17px;
+    background-image: url(Images/chevron.png);
+    background-repeat: no-repeat;
 }

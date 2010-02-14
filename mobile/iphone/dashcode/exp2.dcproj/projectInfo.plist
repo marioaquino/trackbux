@@ -4,6 +4,8 @@
 <dict>
 	<key>AppIconImageSettings</key>
 	<string>image-theme: 1; image-shape: 0; image-opacity: 1.00; image-top-color: 1,1,1; image-bottom-color: 0.925490201,0.925490201,0.925490201; image-radius: 12,12,12,12; image-border-color: 0.670000017,0.670000017,0.670000017;</string>
+	<key>CYBackwardCompatibleExport</key>
+	<false/>
 	<key>CYProjectFormatVersion</key>
 	<integer>14</integer>
 	<key>CYShineVersion</key>
@@ -11,7 +13,7 @@
 	<key>MainCSS</key>
 	<string>main.css</string>
 	<key>MainHTML</key>
-	<string>index.html</string>
+	<string>index2.foo</string>
 	<key>MainJS</key>
 	<string>main.js</string>
 	<key>ProjectSpecType</key>
