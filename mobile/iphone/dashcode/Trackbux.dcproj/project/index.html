@@ -13,6 +13,8 @@
     <script type="text/javascript" src="Parts/Text.js" charset="utf-8"></script>
     <script type="text/javascript" src="Parts/PushButton.js" charset="utf-8"></script>
     <script type="text/javascript" src="Parts/ButtonHandler.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Transitions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/StackLayout.js" charset="utf-8"></script>
 </head>
 <body onload="load();" onorientationchange="swapOrientation();">
     <div apple-part="com.apple.Dashcode.part.StackLayout" id="views">
@@ -55,13 +57,12 @@
                 <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.141176477,0.384313732,0.870588243,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.16; shine-alpha-level: 0.00; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="done"></div>
                 <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="settingsTitle"></div>
             </div>
-            <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.725490212,0,0,1; image-bottom-color: 0.689516127,0,0,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.30; shine-alpha-level: 0.20; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="reset"></div>
             <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="footer" apple-group="text" apple-style="part-height-dependent: true;"></div>
-            <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="usernameField">
-            <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="usernameLabel"></div>
-            <input type="password" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="passwordField">
-            <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="passwordLabel"></div>
-            <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="authenticateBtn"></div>
+            <div apple-part="com.apple.Dashcode.part.StackLayout" id="stackLayout"><div id="view1" apple-part-locked="true">
+                    <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="usernameField">
+                    <input type="password" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="passwordField">
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="authenticateBtn"></div>
+                </div><div id="view2" apple-part-locked="true"></div></div>
         </div>
     </div>
     <script type="text/javascript" src="Parts/utilities.js" charset="utf-8"></script>

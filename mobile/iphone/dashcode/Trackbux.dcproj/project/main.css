@@ -27,19 +27,6 @@ body {
     min-height: 208px;
 }
 
-#settings {
-    display: none;
-    position: relative;
-    margin-top: 0px;
-    margin-left: 0px;
-    -webkit-margin-top-collapse: separate;
-    -webkit-margin-bottom-collapse: separate;
-    width: auto;
-    margin-right: 0px;
-    min-height: 356px;
-    height: auto;
-}
-
 #footer {
     font-size: 10pt;
     text-overflow: ellipsis;
@@ -61,31 +48,6 @@ body {
     text-align: center;
 }
 
-#reset {
-    font-family: Helvetica;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    -webkit-dashboard-region: dashboard-region(control rectangle);
-    -webkit-margin-top-collapse: separate;
-    -webkit-margin-bottom-collapse: separate;
-    position: absolute;
-    bottom: auto;
-    margin-top: 0px;
-    font-size: 14px;
-    height: 33px;
-    text-shadow: rgba(0, 0, 0, 0.316406) 0px -1px 0px;
-    width: 157px;
-    top: 280px;
-    right: 81px;
-    margin-left: auto;
-    left: 82px;
-    margin-right: auto;
-}
-
 #done {
     font-family: Helvetica;
     text-align: center;
@@ -100,7 +62,7 @@ body {
     bottom: auto;
     margin-top: 0px;
     width: 49px;
-    text-shadow: rgba(0, 0, 0, 0.21875) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.214844) 0px -1px 0px;
     font-size: 13px;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -132,7 +94,7 @@ body {
     font-weight: bold;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.417969) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.414062) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -146,45 +108,13 @@ body {
     width: 40px;
 }
 
-#usernameLabel {
-    font-family: Helvetica;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    left: 82px;
-    top: 69px;
-    right: 181px;
-    width: auto;
-    bottom: 273px;
-    height: auto;
-}
-
-#passwordLabel {
-    font-family: Helvetica;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    left: 82px;
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-    top: 128px;
-    right: 184px;
-    width: auto;
-    bottom: 214px;
-    height: auto;
-}
-
 #authenticateBtn {
     font-family: Helvetica;
     font-weight: bold;
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.433594) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.429688) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 30px;
@@ -193,9 +123,9 @@ body {
     right: auto;
     bottom: auto;
     margin-top: 0px;
-    left: 82px;
-    top: 189px;
     width: 89px;
+    left: 149px;
+    top: 115px;
 }
 
 #usernameField {
@@ -203,9 +133,9 @@ body {
     color: black;
     font-family: HelveticaNeue;
     font-size: 10pt;
-    top: 85px;
-    left: 82px;
     width: 114px;
+    left: 7px;
+    top: 65px;
 }
 
 #passwordField {
@@ -213,9 +143,9 @@ body {
     color: black;
     font-family: HelveticaNeue;
     font-size: 10pt;
-    top: 143px;
-    left: 82px;
     width: 114px;
+    left: 7px;
+    top: 118px;
 }
 
 #settingsTitle {
@@ -235,7 +165,7 @@ body {
     font-size: 15pt;
     letter-spacing: 1px;
     font-weight: bold;
-    text-shadow: rgba(0, 0, 0, 0.308594) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.304688) 0px -1px 0px;
 }
 
 #background {
@@ -353,7 +283,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.414062) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.410156) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -654,7 +584,7 @@ body {
     font-size: 12px;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.40625) 0px -1px 0px;
+    text-shadow: rgba(0, 0, 0, 0.402344) 0px -1px 0px;
     text-overflow: ellipsis;
     white-space: nowrap;
     -webkit-dashboard-region: dashboard-region(control rectangle);
@@ -687,4 +617,44 @@ body {
     font-family: Helvetica;
     top: 189px;
     left: 200px;
+}
+
+#settings {
+    display: none;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    -webkit-margin-top-collapse: separate;
+    -webkit-margin-bottom-collapse: separate;
+    width: auto;
+    margin-right: 0px;
+    min-height: 356px;
+    height: auto;
+}
+
+#stackLayout {
+    overflow: hidden;
+    z-index: 0;
+    position: absolute;
+    margin-top: 0px;
+    right: 0px;
+    bottom: 256px;
+    top: 45px;
+    left: 0px;
+    width: 320px;
+    height: 278px;
+}
+
+#view1 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 278px;
+}
+
+#view2 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 278px;
 }

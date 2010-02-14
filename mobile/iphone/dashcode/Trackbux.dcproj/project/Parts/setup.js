@@ -25,13 +25,11 @@ var dashcodePartSpecs = {
     "infoButton": { "creationFunction": "CreatePushButton", "customImage": "Images/info.png", "customImagePosition": "PushButton.IMAGE_POSITION_CENTER", "customImagePressed": "Images/info_clicked.png", "initialHeight": 40, "initialWidth": 40, "leftImageWidth": 1, "onclick": "flipToSettings", "rightImageWidth": 1 },
     "nextCycleVal": { "creationFunction": "CreateText" },
     "nextCycleVal-L": { "creationFunction": "CreateText" },
-    "passwordLabel": { "creationFunction": "CreateText", "text": "Password" },
     "remainingLabel": { "creationFunction": "CreateText", "text": "Amount Remaining:" },
     "remainingLabel1": { "creationFunction": "CreateText", "text": "Amount Remaining:" },
-    "reset": { "creationFunction": "CreatePushButton", "initialHeight": 33, "initialWidth": 157, "leftImageWidth": 5, "onclick": "clearSettings", "rightImageWidth": 5, "text": "Clear Settings" },
     "settingsTitle": { "creationFunction": "CreateText", "text": "Settings" },
     "spentLabel": { "creationFunction": "CreateText", "text": "Amount Spent:" },
     "spentLabel1": { "creationFunction": "CreateText", "text": "Amount Spent:" },
-    "usernameLabel": { "creationFunction": "CreateText", "text": "Username" },
+    "stackLayout": { "creationFunction": "CreateStackLayout", "subviewsTransitions": [{ "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }] },
     "views": { "creationFunction": "CreateStackLayout", "subviewsTransitions": [{ "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "left-right", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "flip" }] }
 };
