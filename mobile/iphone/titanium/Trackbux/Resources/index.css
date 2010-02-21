@@ -14,3 +14,14 @@ p
 {
 	margin-bottom:20px;
 }
+
+#gauge {
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    width: 150px;
+    height: 150px;
+    left: 70px;
+    top: 16px;
+}

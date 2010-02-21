@@ -1,0 +1,3 @@
+build/iphone/Classes/ApplicationRouting*
+build/iphone/Resources/libTitanium.a
+build/iphone/Resources/tiapp.plist
