@@ -15,3 +15,11 @@ window.onload = function()
 	},false);
 	
 };
+
+function setGaugeValue (gaugeId, value)
+{
+    var element = document.getElementById(gaugeId);
+    if (element != null && element.object != null && element.object.setValue != null) {
+        element.object.setValue(value);
+    }
+}

@@ -10,5 +10,36 @@
 <body>
 	
 	<div id="gauge"><canvas style="width: 150px; height: 150px; " width="150" height="150"></canvas></div>
+	<!-- <div id="expenseField"></div> -->
+	<input type="number" name="" value="" id="expenseField" onchange="expenseValueChange(event)">
+	<div id="addExpenseBtn" style="height:50px"></div>
+	
+	
+	<script>
+		// var expField = Titanium.UI.createTextField({
+		// 	id:'expenseField',
+		// 	value:'',
+		// 	keyboardType:Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
+		// 	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+		// 	hintText:'amount',
+		// 	clearOnEdit:true,		
+		// 	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
+		// 	clearButtonMode:Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+		// });
+		
+		var expenseButton = Titanium.UI.createButton({
+			id:'addExpenseBtn',
+			title:'Add Expense',
+			color:'#4a6c9b',
+			height:40,
+			width:96,
+			fontSize:12,
+			fontWeight:'bold'
+		});
+		expenseButton.addEventListener('click',function(e)
+		{
+			setGaugeValue('gauge', 50);
+		});
+	</script>
 </body>
 </html>
