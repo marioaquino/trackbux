@@ -7,7 +7,7 @@
 	<prerendered-icon>false</prerendered-icon>
 	<statusbar-style>opaque</statusbar-style>
     <windows>
-        <window>
+        <!-- <window>
             <id>initial</id>
             <url>index.html</url>
             <backgroundColor>#111</backgroundColor>
@@ -20,6 +20,15 @@
             <url>about.html</url>
             <backgroundColor>#111</backgroundColor>
 			<icon>ti://top rated</icon>
+            <barColor>#000</barColor>
+			<fullscreen>false</fullscreen>
+        </window> -->
+        <window>
+            <id>accounts</id>
+			<title>Accounts</title>
+            <url>accounts.html</url>
+            <!-- <backgroundColor>#111</backgroundColor> -->
+			<icon>accountsicon.png</icon>
             <barColor>#000</barColor>
 			<fullscreen>false</fullscreen>
         </window>

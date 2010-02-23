@@ -16,8 +16,12 @@
 }
 - (NSData*) resolveAppAsset:(NSURL*)url;
 - (NSData*) pageNamedAbout;
+- (NSData*) pageNamedAccounts;
+- (NSData*) pageNamedBudget;
 - (NSData*) styleNamedIndex;
 - (NSData*) pageNamedIndex;
 - (NSData*) scriptNamedIndex;
+- (NSData*) scriptNamedTrackbux;
+- (NSData*) scriptNamedTrackbux_db;
 
 @end
