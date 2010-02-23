@@ -15,6 +15,20 @@ p
 	margin-bottom:20px;
 }
 
+.section {
+    position: absolute;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    left: 17px;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    width: 243px;
+    opacity: 0.3;
+    height: 108px;
+    top: 169px;
+    -webkit-border-image: url(Images/roundedRectangleShape.png) 0 7 0 7 stretch stretch;
+}
+
 #gauge {
     position: absolute;
     right: auto;
@@ -64,4 +78,52 @@ p
     left: 160px;
     font-family: Helvetica;
     opacity: 1;
+}
+
+#spentLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 56px;
+    font-family: Helvetica;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    top: 181px;
+    right: 138px;
+    width: auto;
+    bottom: 140px;
+    height: auto;
+}
+
+#remainingLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: Helvetica;
+    font-size: 14px;
+    left: 26px;
+    color: rgb(153, 153, 153);
+    top: 205px;
+    right: 135px;
+    width: auto;
+    bottom: 120px;
+    height: auto;
+}
+
+#cycleLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 77px;
+    font-family: Helvetica;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    top: 229px;
+    right: 138px;
+    width: auto;
+    bottom: 99px;
+    height: auto;
 }
