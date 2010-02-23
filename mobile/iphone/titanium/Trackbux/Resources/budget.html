@@ -1,0 +1,64 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+	<title>Budget</title>
+	<script language="javascript" type="text/javascript" src="trackbux.js"></script>
+	<script language="javascript" type="text/javascript" src="trackbux_db.js"></script>
+	<script>
+	
+	function getBudgetSummary() {
+		Trackbux.debug("in getBudgetSummary");
+		var account_id = Trackbux.getCurrentAccountID();
+		Trackbux.debug("account_id=" + account_id);
+		var budgetSummary = null;
+	
+		if (account_id) {		
+			var currentBudget = TrackbuxDB.getCurrentBudget(account_id);
+			Trackbux.debug("after got current budget");
+			Trackbux.debug(currentBudget);
+			if (currentBudget) {
+				budgetSummary = TrackbuxDB.getBudgetSummary(currentBudget);
+				Trackbux.debug(budgetSummary);
+			}
+		}
+		return budgetSummary;
+	}	
+	
+	// create table view template
+	var data = [
+		{title:'Amount Spent:'},
+		{title:'Amount Remaining:'},
+		{title:'Next Cycle:'}]
+	
+	var tableView = Titanium.UI.createTableView({
+		data:data,
+	}, function(eventObject)
+	{
+		var expenseAmt = (eventObject.row + 1) * 10;
+		TrackbuxDB.addExpense(budgetSummary.budget_id,expenseAmt);
+		budgetSummary = updateSummary();
+	});
+
+	var budgetSummary = null;
+	
+	function updateSummary() {
+		var budgetSummary = getBudgetSummary();
+		tableView.updateRow(0,{title:"Amount Spent: " + budgetSummary.amountSpent});
+		tableView.updateRow(1,{title:"Amount Remaining: " + budgetSummary.amountRemaining});
+		tableView.updateRow(2,{title:"Next Cycle: " + budgetSummary.nextCycle});	
+		return budgetSummary;	
+	}
+
+	var compositeView = Titanium.UI.createCompositeView();
+	compositeView.addView(tableView,{top:0,left:0,height:150});
+
+	// add and show the view
+	Titanium.UI.currentWindow.addView(compositeView);
+	Titanium.UI.currentWindow.showView(compositeView);
+
+	budgetSummary = updateSummary();
+	</script>
+</head>
+<body>
+</body>
+</html>
