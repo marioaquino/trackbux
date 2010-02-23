@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Accounts</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script language="javascript" type="text/javascript" src="trackbux.js"></script>
+	<script language="javascript" type="text/javascript" src="trackbux_db.js"></script>
+	<script>
+	// Use setTitle API to set Window title
+	Titanium.UI.currentWindow.setTitle('Accounts');
+
+	TrackbuxDB.init();
+	var data = TrackbuxDB.getAccounts();
+
+	var tableView = Titanium.UI.createTableView({
+		data:data
+
+	}, function(eventObject)
+	{
+		var selectedAccount = eventObject.rowData;
+		var win = Titanium.UI.createWindow({url:'budget.html',title: selectedAccount.title});
+		var historyButton = Titanium.UI.createButton({
+			id: 'historyButton',
+			title: 'History'
+		});
+		historyButton.addEventListener('click',function(e)
+		{
+			var a = Titanium.UI.createAlertDialog();
+			a.setTitle('History');
+			a.setMessage('you clicked the history button');
+			a.show();
+		});
+		win.setRightNavButton(historyButton);
+		Trackbux.setCurrentAccountID(selectedAccount.account_id);
+		win.open({animated:true});	
+		
+	});
+
+	Titanium.UI.currentWindow.addView(tableView);
+	Titanium.UI.currentWindow.showView(tableView);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
